@@ -21,7 +21,7 @@ module.exports = function(grunt) {
    sass: {
    	dist: {
    		files: {
-   			'css/style.css' : 'css/style.scss'
+   			'assets/css/style.css' : 'assets/css/style.scss'
    		}
    	}
    },
@@ -31,14 +31,14 @@ module.exports = function(grunt) {
    		browsers: ['last 5 version', 'ie 8', 'ie 9']
    	},
    	no_dest: {
-   		src: 'css/style.css'
+   		src: 'assets/css/style.css'
    	}
    },
 
    connect: {
    	server: {
    		options: {
-   			port: '8000',
+   			port: '8009',
    			base: ''
    		}
    	}
@@ -65,5 +65,5 @@ grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-recess');
 
  // Default task(s).
- grunt.registerTask('default', ['connect','watch']);
+ grunt.registerTask('default', ['sass','autoprefixer','recess','connect','watch']);
 };

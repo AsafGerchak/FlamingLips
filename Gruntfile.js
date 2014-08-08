@@ -6,13 +6,17 @@ module.exports = function(grunt) {
 
    watch: {
    	css: {
-   		files: 'css/*.scss',
+   		files: 'assets/css/*.scss',
    		tasks: ['sass', 'autoprefixer', 'recess']
    	},
    	html: {
    		files: 'index.html',
    		tasks: ['']
    	},
+      javascript: {
+         files: 'assets/app.js',
+         tasks: ['']
+      },
    	options: {
    		livereload: true
    	}
@@ -38,7 +42,7 @@ module.exports = function(grunt) {
    connect: {
    	server: {
    		options: {
-   			port: '8009',
+   			port: '9009',
    			base: ''
    		}
    	}
@@ -51,7 +55,7 @@ module.exports = function(grunt) {
    			compress: true
    		},
    		files: {
-   			'css/mini.css' : 'css/style.css'
+   			'assets/css/mini.css' : 'assets/css/style.css'
    		}
    	}
    }

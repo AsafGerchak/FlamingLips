@@ -1,4 +1,4 @@
-var key = "cdt6ay7muz6npnbnjvb2dyvz"
+var key = '5c406cfcc3c57ea167f02969db547f45'
 
 /*
 ==========================
@@ -14,16 +14,17 @@ attackApp.init = function(){
 
 attackApp.getInfluences = function(){
 	$.ajax({
-		url: 'https://api.rovicorp.com/data/v1.1/name/influencers?name=Flaming+Lips&count=0&offset=0&country=US&language=en&format=json&apikey=cdt6ay7muz6npnbnjvb2dyvz&sig=70c0a835d0e944c024dbb42e0f2d19e4',
+		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks',
 		type: 'GET',
-		// data: {
-		// 	apikey: key,
-		// 	name: 'Flaming Lips',
-		// 	format: 'json'
-		// },
+		data: {
+			api_key: key,
+			format: 'json',
+			artist: 'Arcade Fire',
+			limit: 5
+		},
 		dataType: 'jsonp',
 		success: function(result){
-			console.log(result);
+			console.log(result.toptracks.track);
 		}
 	});
 };

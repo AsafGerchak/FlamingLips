@@ -172,6 +172,10 @@ TYPOGRAPHY
 =============================
 */
 #attackGo {
-  width: 150px;
-  height: 40px;
   background-color: red; }
+
+#defendGo {
+  background-color: green; }
+
+.firstStrike {
+  background-color: #777; }

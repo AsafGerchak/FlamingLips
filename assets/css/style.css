@@ -177,5 +177,6 @@ TYPOGRAPHY
 #defendGo {
   background-color: green; }
 
-.firstStrike {
+.firstStrike,
+.firstCounter {
   background-color: #777; }

@@ -94,10 +94,9 @@ defendApp.getOpeningTrack = function(bandName, albumQuery){
 		},
 		dataType: 'jsonp',
 		success: function(result){
-			console.log(result);
 			// On a successful call, grab the opening track of the album and pass it and other needed info into the insult function:
 			defendApp.openingTrack = result.album.tracks.track[0].name;
-			defendApp.insult(artist, albumQuery, defendApp.openingTrack);
+			defendApp.insult(bandName, albumQuery, defendApp.openingTrack);
 		}
 	});
 };
@@ -106,8 +105,16 @@ defendApp.getOpeningTrack = function(bandName, albumQuery){
 defendApp.insult = function(artist, album, song){
 	// Build the insult and inject it into the DOM
 	$('.firstCounter h3').empty();
-	defendApp.phrase = bandName + "? Please. Have you even listened to '" + title + "'? That song is only " + defendApp.minuteTime + " long, but it feels like a fucking eternity. A BAD eternity.";
-	$('.firstCounter h3').append(defendApp.phrase);
+	if (artist !== album && album !== song) {
+		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? '" + song + "' changed the way musicians open albums!";
+		$('.firstCounter h3').append(defendApp.phrase);
+	} else if (artist == album && album !== song) {
+		defendApp.phrase = "You don't like " + artist + "? Have you even listened to the self-titled album, or were you too busy having bad taste? '" + song + "' changed the way musicians open albums!";
+		$('.firstCounter h3').append(defendApp.phrase);
+	} else {
+		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? The title track changed the way musicians open albums!";
+		$('.firstCounter h3').append(defendApp.phrase);
+	};
 };
 
 /*

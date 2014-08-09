@@ -9,17 +9,18 @@ ATTACK APP
 var attackApp = {};
 
 attackApp.init = function(){
-	attackApp.getInfluences();
+	var band = $('#band').val();
+	attackApp.getTrack(band);
 };
 
-attackApp.getInfluences = function(){
+attackApp.getTrack = function(bandQuery){
 	$.ajax({
 		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks',
 		type: 'GET',
 		data: {
 			api_key: key,
 			format: 'json',
-			artist: 'Arcade Fire',
+			artist: bandQuery,
 			limit: 5
 		},
 		dataType: 'jsonp',
@@ -50,10 +51,9 @@ G0-GO-GADGET-PAGE-LOAD!
 */ 
 
 $(function(){
-	//NEED TO INSERT BUTTON NAMES
-	// $('ATTACKBUTTONHERE').on('click', function(){
+	$('#attackGo').on('click', function(){
 		attackApp.init();
-	// });
+	});
 	$('DEFENDBUTTONHERE').on('click', function(){
 		defendApp.init();
 	});

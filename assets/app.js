@@ -35,14 +35,13 @@ attackApp.getTrack = function(bandQuery){
 	});
 };
 
+// Time to start some shit:
 attackApp.insult = function(bandName, title, seconds){
-	// Build the insult and inject it into the DOM
+	// Build the insult and inject it into the DOM:
 	$('.firstStrike h3').empty();
 	attackApp.minuteTime = Math.floor(seconds/60) + " minutes and " + (seconds%60) + " seconds";
 	attackApp.phrase = bandName + "? Please. Have you even listened to '" + title + "'? That song is only " + attackApp.minuteTime + " long, but it feels like a fucking eternity. A BAD eternity.";
 	$('.firstStrike h3').append(attackApp.phrase);
-
-	// $('.length').text(attackApp.minuteTime);
 };
 
 
@@ -56,10 +55,60 @@ DEFEND APP
 
 var defendApp = {};
 
+// init function, to be triggered on attack-button click
 defendApp.init = function(){
-	
+	var band = $('#band').val();
+	defendApp.getAlbum(band);
 };
 
+// the ajax call! Passing the band name entered by the user as an argument to query info about their top albums:
+defendApp.getAlbum = function(bandQuery){
+	$.ajax({
+		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums',
+		type: 'GET',
+		data: {
+			api_key: key,
+			format: 'json',
+			artist: bandQuery,
+			limit: 3
+		},
+		dataType: 'jsonp',
+		success: function(result){
+			// On a successful call, grab top album, pass it in as an argument to the album-info function:
+			defendApp.topAlbum = result.topalbums.album[0].name;
+			defendApp.getOpeningTrack(bandQuery, defendApp.topAlbum);
+		}
+	});
+};
+
+// Second ajax call! Passing in the top album to get its opening track:
+defendApp.getOpeningTrack = function(bandName, albumQuery){
+	$.ajax({
+		url: 'http://ws.audioscrobbler.com/2.0/?method=album.getInfo',
+		type: 'GET',
+		data: {
+			api_key: key,
+			format: 'json',
+			artist: bandName,
+			album: albumQuery
+		},
+		dataType: 'jsonp',
+		success: function(result){
+			console.log(result);
+			// On a successful call, grab the opening track of the album and pass it and other needed info into the insult function:
+			defendApp.openingTrack = result.album.tracks.track[0].name;
+			defendApp.insult(artist, albumQuery, defendApp.openingTrack);
+		}
+	});
+};
+
+// Time to make someone uncomfortable:
+defendApp.insult = function(artist, album, song){
+	// Build the insult and inject it into the DOM
+	$('.firstCounter h3').empty();
+	defendApp.phrase = bandName + "? Please. Have you even listened to '" + title + "'? That song is only " + defendApp.minuteTime + " long, but it feels like a fucking eternity. A BAD eternity.";
+	$('.firstCounter h3').append(defendApp.phrase);
+};
 
 /*
 ==========================

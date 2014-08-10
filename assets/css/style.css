@@ -166,9 +166,9 @@ td, th {
   height: 0;
   clear: both; }
 
-body {
-  margin: 0;
-  padding: 0; }
+body,
+html {
+  height: 100%; }
 
 /*
 =============================
@@ -182,21 +182,27 @@ FIRST SCREEN
 */
 header {
   width: 100%;
-  color: #2c3e50;
+  height: 90%;
+  color: #e74c3c;
+  text-shadow: 0 0 0.3px #555;
   text-align: center;
   margin: 0; }
   header .title {
-    background-color: #f39c12;
+    height: 60%;
+    background-color: #8eae57;
     padding: 5%; }
-  header .attackGo,
-  header .defendGo {
-    float: left;
-    width: 50%;
-    padding: 5%; }
-  header .attackGo {
-    background-color: #c0392b; }
-  header .defendGo {
-    background-color: #16a085; }
+  header .buttons {
+    height: 40%; }
+    header .buttons .attackGo,
+    header .buttons .defendGo {
+      float: left;
+      height: 100%;
+      width: 50%;
+      padding: 5%; }
+    header .buttons .attackGo {
+      background-color: #1ecec6; }
+    header .buttons .defendGo {
+      background-color: #dedc45; }
 
 .firstStrike,
 .firstCounter {

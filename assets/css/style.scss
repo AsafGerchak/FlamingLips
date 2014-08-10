@@ -20,9 +20,25 @@ GENERAL STYLES
    clear: both;
 }
 
+// COLOR VARIABLES
+// $titleColor: #e74c3c;
+// $attackColor: #D7861B;
+// $defendColor: #68D0AF;
+
+$font: #e74c3c;
+$titleColor: #8eae57;
+$attackColor: #1ECEC6;
+$defendColor: #dedc45;
+
+
+body,
+html {
+	height: 100%;
+}
+
 body {
-	margin: 0;
-	padding: 0;
+	// margin: 0;
+	// padding: 0;
 	// color
 	// font-family
 	//font-weight
@@ -45,29 +61,37 @@ FIRST SCREEN
 
 header {
 	width: 100%;
-	color: #2c3e50;
+	height: 90%;
+	color: $font;
+	text-shadow: 0 0 0.3px #555;
 	text-align: center;
 	margin: 0;
 
 	.title {
-		background-color: #f39c12;
+		height: 60%;
+		background-color: $titleColor;
 		padding: 5%;
 	}
 
-	.attackGo,
-	.defendGo {
-		float: left;
-		width: 50%;
-		padding: 5%;
-	}
+	.buttons {
+		height: 40%;
 
-	.attackGo {
-		background-color: #c0392b;
-	}
+		.attackGo,
+		.defendGo {
+			float: left;
+			height: 100%;
+			width: 50%;
+			padding: 5%;
+		}
 
-	.defendGo {
-		background-color: #16a085;
-	}
+		.attackGo {
+			background-color: $attackColor;
+		}
+
+		.defendGo {
+			background-color: $defendColor;
+		}
+	}	
 }
 
 .firstStrike,

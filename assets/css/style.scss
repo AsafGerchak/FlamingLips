@@ -21,6 +21,8 @@ GENERAL STYLES
 }
 
 body {
+	margin: 0;
+	padding: 0;
 	// color
 	// font-family
 	//font-weight
@@ -33,18 +35,39 @@ TYPOGRAPHY
 =============================
 */
 
-#attackGo,
-#defendGo {
-	// width: 150px;
-	// height: 40px;
-}
 
-#attackGo {
-	background-color: red;
-}
 
-#defendGo {
-	background-color: green;
+/*
+=============================
+FIRST SCREEN
+=============================
+*/
+
+header {
+	width: 100%;
+	color: #2c3e50;
+	text-align: center;
+	margin: 0;
+
+	.title {
+		background-color: #f39c12;
+		padding: 5%;
+	}
+
+	.attackGo,
+	.defendGo {
+		float: left;
+		width: 50%;
+		padding: 5%;
+	}
+
+	.attackGo {
+		background-color: #c0392b;
+	}
+
+	.defendGo {
+		background-color: #16a085;
+	}
 }
 
 .firstStrike,

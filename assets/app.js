@@ -45,8 +45,6 @@ attackApp.insult = function(bandName, title, seconds){
 };
 
 
-
-
 /*
 ==========================
 DEFEND APP
@@ -103,7 +101,7 @@ defendApp.getOpeningTrack = function(bandName, albumQuery){
 
 // Time to make someone uncomfortable:
 defendApp.insult = function(artist, album, song){
-	// Build the insult and inject it into the DOM
+	// Build the insult and variants (dependent on name overlaps), and inject it into the DOM
 	$('.firstCounter h3').empty();
 	if (artist !== album && album !== song) {
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? '" + song + "' changed the way musicians open albums!";

@@ -180,11 +180,22 @@ TYPOGRAPHY
 FIRST SCREEN
 =============================
 */
-header {
+.help {
   width: 100%;
-  height: 90%;
-  color: #e74c3c;
-  text-shadow: 0 0 0.3px #555;
+  height: 100%;
+  background-color: #e74c3c; }
+
+.helpButton {
+  width: 10%;
+  margin: 0 auto; }
+
+header {
+  position: absolute;
+  top: 6%;
+  left: 0;
+  width: 100%;
+  height: 94%;
+  color: #934c3e;
   text-align: center;
   margin: 0; }
   header .title {
@@ -202,7 +213,7 @@ header {
     header .buttons .attackGo {
       background-color: #1ecec6; }
     header .buttons .defendGo {
-      background-color: #dedc45; }
+      background-color: #ecea46; }
 
 .firstStrike,
 .firstCounter {

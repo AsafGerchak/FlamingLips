@@ -25,11 +25,15 @@ GENERAL STYLES
 // $attackColor: #D7861B;
 // $defendColor: #68D0AF;
 
-$font: #e74c3c;
+$font: #934c3e;
+$helpColor: #e74c3c;
+// Duller red alternate:
+// $helpColor: #e55a4b;
 $titleColor: #8eae57;
 $attackColor: #1ECEC6;
-$defendColor: #dedc45;
-
+$defendColor: #ecea46;
+// Previously was this:
+// $defendColor: #dedc45;
 
 body,
 html {
@@ -59,11 +63,30 @@ FIRST SCREEN
 =============================
 */
 
-header {
+// ABOUT SECTION
+
+.help {
 	width: 100%;
-	height: 90%;
+	height: 100%;
+	background-color: $helpColor;
+}
+
+.helpButton {
+	width: 10%;
+	margin: 0 auto;
+}
+
+
+// SPLASH
+
+header {
+	position: absolute;
+	top: 6%;
+	left: 0;
+	width: 100%;
+	height: 94%;
 	color: $font;
-	text-shadow: 0 0 0.3px #555;
+	// text-shadow: 0 0 0.3px #555;
 	text-align: center;
 	margin: 0;
 

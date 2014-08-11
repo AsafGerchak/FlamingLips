@@ -125,9 +125,25 @@ ABOUT SCREEN LAUNCHER
 var aboutScreen = {};
 
 aboutScreen.init = function(){
-		$('#attackGo').toggleClass('offscreenAttack');
-		$('#defendGo').toggleClass('offscreenDefend');
-		$('#header').toggleClass('offscreenHeader');
+	$('#attackGo').addClass('offscreenAttack');
+	$('#defendGo').addClass('offscreenDefend');
+	$('#header').addClass('offscreenHeader');
+	$('.about').css('top', '-6%');
+	$('.title').fadeOut(400, 'linear');
+	$('.aboutClose').css('top', '1.5%');
+};
+
+var aboutClose = {};
+
+aboutClose.init = function(){
+	$('#attackGo').removeClass('offscreenAttack');
+	$('#defendGo').removeClass('offscreenDefend');
+	$('#header').removeClass('offscreenHeader');
+	$('.about').css('top', '0');
+	$('.title').fadeIn(400, 'linear');
+	$('.aboutClose').fadeOut(50, function(){
+		$(this).css('top', '-40%').delay(800).fadeIn(400);
+	});
 };
 
 
@@ -139,7 +155,10 @@ G0-GO-GADGET-PAGE-LOAD!
 
 $(function(){
 	$('#aboutButton').on('click', function(){
-		aboutScreen.init()
+		aboutScreen.init();
+	});
+	$('#aboutClose').on('click', function(){
+		aboutClose.init();
 	});
 	$('#attackGo').on('click', function(){
 		attackApp.init();

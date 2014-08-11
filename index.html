@@ -10,7 +10,7 @@
 </head>
 <body>
 	
-	<div class="about">
+	<div class="about" id="about">
 		<div class="aboutButton" id="aboutButton">
 			<!-- <h2> -->
 				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="questionMark" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
@@ -18,10 +18,30 @@
 				</svg>
 			<!-- </h2> -->
 		</div> <!-- /.aboutButton -->
+
+		<div class="aboutContent">
+			<h4>What is this?</h4>
+			<p>Some hipster is going on about their favorite band. You could just ignore it and walk away, but what are you - a mature adult? Please. Obviously you want to out-do that jerk, because making friends is for chumps.</p>
+			<p>Just type in the name of whatever musician they're talking about, and this app will provide you with a convenient insult to rudely throw in their face, regardless of whether they're saying an artist is good or bad. It works because of the two laws of hipster music talk: Make incredibly specific references, and always disagree, no matter what.</p>
+		</div> <!-- /.aboutContent -->
+
 	</div>
 
 <!-- CAN GET RID OF CLEARFIX, PROBABLY -->
-	<header class="clearfix" id="header">
+	<header id="header">
+		
+	<div class="aboutClose" id="aboutClose">
+		
+		<h4>Sounds good. Let's go make someone uncomfortable.</h4>
+
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="closeIcon" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+			<g>
+				<path d="M49.5,5c-24.9,0-45,20.1-45,45s20.1,45,45,45s45-20.1,45-45S74.4,5,49.5,5z M71.3,65.2c0.3,0.3,0.5,0.7,0.5,1.1   s-0.2,0.8-0.5,1.1L67,71.8c-0.3,0.3-0.7,0.5-1.1,0.5s-0.8-0.2-1.1-0.5L49.5,56.6L34.4,71.8c-0.3,0.3-0.7,0.5-1.1,0.5   c-0.4,0-0.8-0.2-1.1-0.5l-4.3-4.4c-0.3-0.3-0.5-0.7-0.5-1.1c0-0.4,0.2-0.8,0.5-1.1L43,49.9L27.8,34.9c-0.6-0.6-0.6-1.6,0-2.3   l4.3-4.4c0.3-0.3,0.7-0.5,1.1-0.5c0.4,0,0.8,0.2,1.1,0.5l15.2,15l15.2-15c0.3-0.3,0.7-0.5,1.1-0.5s0.8,0.2,1.1,0.5l4.3,4.4   c0.6,0.6,0.6,1.6,0,2.3L56.1,49.9L71.3,65.2z"/>
+			</g>
+		</svg> <!-- end close icon -->
+	
+	</div> <!-- /.aboutClose -->
+
 		<div class="title">
 			
 			<h1>Condescending Hipster Response Generator</h1>
@@ -36,6 +56,7 @@
 		<div class="buttons">
 
 			<div class="attackGo" id="attackGo">
+				
 				<h2>Someone says they're good?</h2>
 				<div class="actionLogo">
 					<!-- Attack icon -->
@@ -46,8 +67,16 @@
 					<h2 class="action">attack</h2>
 				</div> <!-- /.actionLogo -->
 
+				<div class="attack">
+					<div class="firstStrike">
+						<h3></h3>
+					</div>
+				</div> <!-- /.attack -->
+
 			</div> <!-- /.attackGo -->
+
 			<div class="defendGo" id="defendGo">
+
 				<h2>Someone's talking smack about them?</h2>
 				<div class="actionLogo">
 					<!-- Defend icon -->
@@ -57,22 +86,32 @@
 					<h2 class="action">defend</h2>
 				</div> <!-- /.actionLogo -->
 
+				<div class="defend">
+					<div class="firstCounter">
+						<h3></h3>
+					</div>
+				</div> <!-- /.defend -->
+
 			</div> <!-- /.defendGo -->
 		
 		</div> <!-- /.buttons -->
 	</header>
 
-	<div class="attack">
-		<div class="firstStrike">
-			<h3></h3>
+	<!-- <section>
+		
+		<div class="attack">
+			<div class="firstStrike">
+				<h3></h3>
+			</div>
 		</div>
-	</div>
 
-	<div class="defend">
-		<div class="firstCounter">
-			<h3></h3>
+		<div class="defend">
+			<div class="firstCounter">
+				<h3></h3>
+			</div>
 		</div>
-	</div>
+
+	</section> -->
 
 
 	<!-- JS LINKS -->

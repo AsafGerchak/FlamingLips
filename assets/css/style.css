@@ -234,7 +234,8 @@ header {
       border: 1px solid #6d3a30;
       width: 70%;
       text-align: center;
-      font-size: 1.4em; }
+      font-size: 1.4em;
+      color: #8eae57; }
       header .title .band:focus {
         outline: none; }
   header .buttons {
@@ -266,6 +267,19 @@ header {
       left: -50%; }
     header .buttons .offscreenDefend {
       right: -50%; }
+    header .buttons .actionLogo {
+      position: absolute;
+      bottom: 8%;
+      left: 10%;
+      height: 40%;
+      width: 80%; }
+      header .buttons .actionLogo .punch,
+      header .buttons .actionLogo .shield {
+        height: 70%;
+        fill: #e74c3c; }
+      header .buttons .actionLogo .action {
+        color: #e74c3c;
+        text-transform: uppercase; }
 
 .offscreenHeader {
   top: 80%;

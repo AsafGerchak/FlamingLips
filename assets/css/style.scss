@@ -41,7 +41,7 @@ $defendColor: #ecea46;
 body,
 html {
 	height: 100%;
-	// overflow: hidden;
+	overflow: hidden;
 }
 
 body {
@@ -92,7 +92,7 @@ h4 {
 }
 
 h5 {
-	font-size: 45px;
+	font-size: 40px;
 	font-weight: 400;
 }
 
@@ -129,6 +129,7 @@ FIRST SCREEN
 		text-align: center;
 		padding-top: 7px;
 		margin-bottom: 5%;
+		cursor: pointer;
 
 		#questionMark {
 			height: 85%;
@@ -156,8 +157,7 @@ FIRST SCREEN
 	width: 100%;
 	height: 7%;
 	padding: 1.5% 5%;
-	// background-color: $titleColor;
-	// display: none;
+	cursor: pointer;
 	transition: all 0.75s 0.3s;
 
 	#closeIcon {
@@ -225,6 +225,7 @@ header {
 			height: 100%;
 			width: 50%;
 			padding: 3%;
+			cursor: pointer;
 			transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s;
 		}
 
@@ -270,8 +271,24 @@ header {
 				color: $aboutColor;
 				text-transform: uppercase;
 			}
+		} // end actionLogo
+
+		
+
+	}	// end buttons
+
+	.reset {
+			position: absolute;
+			bottom: -50%;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			background-color: $titleColor;
+			padding: 5% 5%;
+			cursor: pointer;
+			transition: all 0.5s 0.85s;
 		}
-	}	
+
 } //end header
 
 .offscreenHeader {
@@ -283,22 +300,3 @@ header {
 .firstCounter {
 	// background-color: #777;
 }
-
-
-/*
-=============================
-ON BUTTON PRESS
-=============================
-*/
-
-// .buttonsMove {
-// 	top: -60%;
-	// transition: all 0.5s 0.35s;
-// }
-
-// .attackSelected,
-// .defendSelected {
-// 	width: 100%;
-// 	height: 250%;
-	// transition: width 0.35s 0, height 0.5s 0.35s;
-// }

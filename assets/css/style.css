@@ -168,7 +168,8 @@ td, th {
 
 body,
 html {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 body {
   color: #934c3e; }
@@ -202,7 +203,7 @@ h4 {
   letter-spacing: 0.04em; }
 
 h5 {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 400; }
 
 p {
@@ -232,7 +233,8 @@ FIRST SCREEN
     height: 6%;
     text-align: center;
     padding-top: 7px;
-    margin-bottom: 5%; }
+    margin-bottom: 5%;
+    cursor: pointer; }
     .about .aboutButton #questionMark {
       height: 85%;
       fill: #6d3a30; }
@@ -248,6 +250,7 @@ FIRST SCREEN
   width: 100%;
   height: 7%;
   padding: 1.5% 5%;
+  cursor: pointer;
   -webkit-transition: all 0.75s 0.3s;
           transition: all 0.75s 0.3s; }
   .aboutClose #closeIcon {
@@ -300,6 +303,7 @@ header {
       height: 100%;
       width: 50%;
       padding: 3%;
+      cursor: pointer;
       -webkit-transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s;
               transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s; }
     header .buttons .attackGo {
@@ -331,14 +335,19 @@ header {
       header .buttons .actionLogo .action {
         color: #e74c3c;
         text-transform: uppercase; }
+  header .reset {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: #a8d064;
+    padding: 5% 5%;
+    cursor: pointer;
+    -webkit-transition: all 0.5s 0.85s;
+            transition: all 0.5s 0.85s; }
 
 .offscreenHeader {
   top: 80%;
   -webkit-transition: 0.35s 0.25s;
           transition: 0.35s 0.25s; }
-
-/*
-=============================
-ON BUTTON PRESS
-=============================
-*/

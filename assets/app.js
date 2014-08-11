@@ -12,7 +12,7 @@ var attackApp = {};
 attackApp.init = function(){
 	var band = $('#band').val();
 	attackApp.getTrack(band);
-	$('#attackGo').css('width', '100%').css('height', '250%');
+	$('#attackGo').css('width', '100%').css('height', '250%').css('cursor', 'auto');
 	$('#defendGo').addClass('offscreenDefend');
 	$('#buttons').css('top', '-60%').css('height', '100%');
 	$('#attackText').fadeOut();
@@ -46,6 +46,19 @@ attackApp.insult = function(bandName, title, seconds){
 	attackApp.minuteTime = Math.floor(seconds/60) + " minutes and " + (seconds%60) + " seconds";
 	attackApp.phrase = bandName + "? Please. Have you even listened to '" + title + "'? That song is only " + attackApp.minuteTime + " long, but it feels like a fucking eternity. A BAD eternity.";
 	$('.firstStrike h5').append(attackApp.phrase);
+	$('#reset').css('bottom', '0');
+	$('#reset').on('click', function(){
+		attackApp.reset();
+	});
+};
+
+attackApp.reset = function(){
+	$('#reset').css('bottom', '-50%');
+	$('.firstStrike h5').fadeOut().empty();
+	$('#attackGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
+	$('#defendGo').removeClass('offscreenDefend');
+	$('#buttons').css('top', '0').css('height', '40%');
+	$('#attackText').fadeIn();
 };
 
 
@@ -61,7 +74,7 @@ var defendApp = {};
 defendApp.init = function(){
 	var band = $('#band').val();
 	defendApp.getAlbum(band);
-	$('#defendGo').css('width', '100%').css('height', '250%');
+	$('#defendGo').css('width', '100%').css('height', '250%').css('cursor', 'auto');
 	$('#attackGo').addClass('offscreenAttack');
 	$('#buttons').css('top', '-60%').css('height', '100%');
 	$('#defendText').fadeOut();
@@ -121,6 +134,19 @@ defendApp.insult = function(artist, album, song){
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? The title track changed the way people open their albums!";
 		$('.firstCounter h5').append(defendApp.phrase);
 	};
+	$('#reset').css('bottom', '0');
+	$('#reset').on('click', function(){
+		defendApp.reset();
+	});
+};
+
+defendApp.reset = function(){
+	$('#reset').css('bottom', '-50%');
+	$('.firstCounter h5').fadeOut().empty();
+	$('#defendGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
+	$('#attackGo').removeClass('offscreenAttack');
+	$('#buttons').css('top', '0').css('height', '40%');
+	$('#defendText').fadeIn();
 };
 
 

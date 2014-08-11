@@ -168,7 +168,8 @@ td, th {
 
 body,
 html {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 /*
 =============================
@@ -180,14 +181,13 @@ TYPOGRAPHY
 FIRST SCREEN
 =============================
 */
-.help {
+.about {
   width: 100%;
   height: 100%;
   background-color: #e74c3c; }
-
-.helpButton {
-  width: 10%;
-  margin: 0 auto; }
+  .about .aboutButton {
+    width: 100%;
+    text-align: center; }
 
 header {
   position: absolute;
@@ -197,23 +197,49 @@ header {
   height: 94%;
   color: #934c3e;
   text-align: center;
-  margin: 0; }
+  margin: 0;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
   header .title {
     height: 60%;
     background-color: #8eae57;
     padding: 5%; }
+    header .title .band:focus {
+      outline: none; }
   header .buttons {
-    height: 40%; }
+    height: 40%;
+    position: relative;
+    overflow: hidden; }
     header .buttons .attackGo,
     header .buttons .defendGo {
-      float: left;
+      position: absolute;
+      bottom: 0;
       height: 100%;
       width: 50%;
-      padding: 5%; }
+      padding: 5%;
+      -webkit-transition: all 0.3s 0.3s;
+              transition: all 0.3s 0.3s; }
     header .buttons .attackGo {
-      background-color: #1ecec6; }
+      background-color: #1ecec6;
+      left: 0; }
     header .buttons .defendGo {
-      background-color: #ecea46; }
+      background-color: #ecea46;
+      right: 0; }
+    header .buttons .offscreenAttack,
+    header .buttons .offscreenDefend {
+      position: absolute;
+      top: 0;
+      -webkit-transition: all 0.35s;
+              transition: all 0.35s; }
+    header .buttons .offscreenAttack {
+      left: -50%; }
+    header .buttons .offscreenDefend {
+      right: -50%; }
+
+.offscreenHeader {
+  top: 80%;
+  -webkit-transition: 0.35s 0.35s;
+          transition: 0.35s 0.35s; }
 
 .firstStrike,
 .firstCounter {

@@ -26,9 +26,9 @@ GENERAL STYLES
 // $defendColor: #68D0AF;
 
 $font: #934c3e;
-$helpColor: #e74c3c;
+$aboutColor: #e74c3c;
 // Duller red alternate:
-// $helpColor: #e55a4b;
+// $aboutColor: #e55a4b;
 $titleColor: #8eae57;
 $attackColor: #1ECEC6;
 $defendColor: #ecea46;
@@ -38,6 +38,7 @@ $defendColor: #ecea46;
 body,
 html {
 	height: 100%;
+	overflow: hidden;
 }
 
 body {
@@ -65,15 +66,15 @@ FIRST SCREEN
 
 // ABOUT SECTION
 
-.help {
+.about {
 	width: 100%;
 	height: 100%;
-	background-color: $helpColor;
-}
+	background-color: $aboutColor;
 
-.helpButton {
-	width: 10%;
-	margin: 0 auto;
+	.aboutButton {
+		width: 100%;
+		text-align: center;
+	}
 }
 
 
@@ -89,32 +90,67 @@ header {
 	// text-shadow: 0 0 0.3px #555;
 	text-align: center;
 	margin: 0;
+	transition: all 0.3s;
 
 	.title {
 		height: 60%;
 		background-color: $titleColor;
 		padding: 5%;
+
+		.band {
+
+			&:focus {
+				outline: none;
+			}
+		}
 	}
 
 	.buttons {
 		height: 40%;
+		position: relative;
+		overflow: hidden;
 
 		.attackGo,
 		.defendGo {
-			float: left;
+			// float: left;
+			position: absolute;
+			bottom: 0;
 			height: 100%;
 			width: 50%;
 			padding: 5%;
+			transition: all 0.3s 0.3s;
 		}
 
 		.attackGo {
 			background-color: $attackColor;
+			left: 0;
 		}
 
 		.defendGo {
 			background-color: $defendColor;
+			right: 0;
+		}
+
+		.offscreenAttack,
+		.offscreenDefend {
+			position: absolute;
+			top: 0;
+			transition: all 0.35s;
+		}
+
+		.offscreenAttack {
+			left: -50%;
+		}
+
+		.offscreenDefend {
+			right: -50%;
 		}
 	}	
+}
+
+.offscreenHeader {
+	top: 80%;
+	transition: 0.35s 0.35s;
 }
 
 .firstStrike,

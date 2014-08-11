@@ -115,6 +115,22 @@ defendApp.insult = function(artist, album, song){
 	};
 };
 
+
+/*
+==========================
+ABOUT SCREEN LAUNCHER
+==========================
+*/ 
+
+var aboutScreen = {};
+
+aboutScreen.init = function(){
+		$('#attackGo').toggleClass('offscreenAttack');
+		$('#defendGo').toggleClass('offscreenDefend');
+		$('#header').toggleClass('offscreenHeader');
+};
+
+
 /*
 ==========================
 G0-GO-GADGET-PAGE-LOAD!
@@ -122,6 +138,9 @@ G0-GO-GADGET-PAGE-LOAD!
 */ 
 
 $(function(){
+	$('#aboutButton').on('click', function(){
+		aboutScreen.init()
+	});
 	$('#attackGo').on('click', function(){
 		attackApp.init();
 	});

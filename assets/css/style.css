@@ -176,6 +176,24 @@ html {
 TYPOGRAPHY
 =============================
 */
+h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 300;
+  font-size: 3.3em;
+  letter-spacing: 0.1em;
+  line-height: 1em; }
+
+h2, h3 {
+  font-family: 'Raleway', sans-serif; }
+
+h2 {
+  font-size: 1.7em;
+  font-weight: 400; }
+
+h3 {
+  font-size: 1.7em;
+  font-weight: 300; }
+
 /*
 =============================
 FIRST SCREEN
@@ -203,9 +221,13 @@ header {
   header .title {
     height: 60%;
     background-color: #8eae57;
-    padding: 5%; }
-    header .title .band:focus {
-      outline: none; }
+    padding: 10% 5%; }
+    header .title h3 {
+      margin: 5% 0; }
+    header .title .band {
+      background-color: #934c3e; }
+      header .title .band:focus {
+        outline: none; }
   header .buttons {
     height: 40%;
     position: relative;
@@ -216,7 +238,7 @@ header {
       bottom: 0;
       height: 100%;
       width: 50%;
-      padding: 5%;
+      padding: 3%;
       -webkit-transition: all 0.3s 0.3s;
               transition: all 0.3s 0.3s; }
     header .buttons .attackGo {

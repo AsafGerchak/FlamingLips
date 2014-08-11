@@ -205,7 +205,12 @@ FIRST SCREEN
   background-color: #e74c3c; }
   .about .aboutButton {
     width: 100%;
-    text-align: center; }
+    height: 6%;
+    text-align: center;
+    padding-top: 7px; }
+    .about .aboutButton #questionMark {
+      height: 85%;
+      fill: #6d3a30; }
 
 header {
   position: absolute;
@@ -225,7 +230,11 @@ header {
     header .title h3 {
       margin: 5% 0; }
     header .title .band {
-      background-color: #934c3e; }
+      background-color: #934c3e;
+      border: 1px solid #6d3a30;
+      width: 70%;
+      text-align: center;
+      font-size: 1.4em; }
       header .title .band:focus {
         outline: none; }
   header .buttons {

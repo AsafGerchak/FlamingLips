@@ -12,6 +12,10 @@ var attackApp = {};
 attackApp.init = function(){
 	var band = $('#band').val();
 	attackApp.getTrack(band);
+	$('#attackGo').css('width', '100%').css('height', '250%');
+	$('#defendGo').addClass('offscreenDefend');
+	$('#buttons').css('top', '-60%').css('height', '100%');
+	$('#attackText').fadeOut();
 };
 
 // the ajax call! Passing the band name entered by the user as an argument to query info about their top tracks
@@ -38,10 +42,10 @@ attackApp.getTrack = function(bandQuery){
 // Time to start some shit:
 attackApp.insult = function(bandName, title, seconds){
 	// Build the insult and inject it into the DOM:
-	$('.firstStrike h3').empty();
+	$('.firstStrike h5').empty();
 	attackApp.minuteTime = Math.floor(seconds/60) + " minutes and " + (seconds%60) + " seconds";
 	attackApp.phrase = bandName + "? Please. Have you even listened to '" + title + "'? That song is only " + attackApp.minuteTime + " long, but it feels like a fucking eternity. A BAD eternity.";
-	$('.firstStrike h3').append(attackApp.phrase);
+	$('.firstStrike h5').append(attackApp.phrase);
 };
 
 
@@ -57,6 +61,10 @@ var defendApp = {};
 defendApp.init = function(){
 	var band = $('#band').val();
 	defendApp.getAlbum(band);
+	$('#defendGo').css('width', '100%').css('height', '250%');
+	$('#attackGo').addClass('offscreenAttack');
+	$('#buttons').css('top', '-60%').css('height', '100%');
+	$('#defendText').fadeOut();
 };
 
 // the ajax call! Passing the band name entered by the user as an argument to query info about their top albums:
@@ -102,16 +110,16 @@ defendApp.getOpeningTrack = function(bandName, albumQuery){
 // Time to make someone uncomfortable:
 defendApp.insult = function(artist, album, song){
 	// Build the insult and variants (dependent on name overlaps), and inject it into the DOM
-	$('.firstCounter h3').empty();
+	$('.firstCounter h5').empty();
 	if (artist !== album && album !== song) {
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? '" + song + "' changed the way people open their albums!";
-		$('.firstCounter h3').append(defendApp.phrase);
+		$('.firstCounter h5').append(defendApp.phrase);
 	} else if (artist == album && album !== song) {
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to the self-titled album, or were you too busy having bad taste? '" + song + "' changed the way people open their albums!";
-		$('.firstCounter h3').append(defendApp.phrase);
+		$('.firstCounter h5').append(defendApp.phrase);
 	} else {
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? The title track changed the way people open their albums!";
-		$('.firstCounter h3').append(defendApp.phrase);
+		$('.firstCounter h5').append(defendApp.phrase);
 	};
 };
 

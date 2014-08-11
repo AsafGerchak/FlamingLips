@@ -41,7 +41,7 @@ $defendColor: #ecea46;
 body,
 html {
 	height: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 body {
@@ -69,7 +69,7 @@ h1 {
 	line-height: 1em;
 }
 
-h2, h3, h4, p {
+h2, h3, h4, h5, p {
 	font-family: 'Raleway', sans-serif;
 	// font-weight: 400;
 }
@@ -89,6 +89,11 @@ h4 {
 	font-size: 22px;
 	font-weight: 400;
 	letter-spacing: 0.04em;
+}
+
+h5 {
+	font-size: 45px;
+	font-weight: 400;
 }
 
 p {
@@ -115,6 +120,7 @@ FIRST SCREEN
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 1000;
 	transition: all 0.35s 0.25s;
 
 	.aboutButton {
@@ -205,17 +211,21 @@ header {
 	.buttons {
 		height: 40%;
 		position: relative;
+		top: 0;
 		overflow: hidden;
+		transition: all 0.5s 0.35s;
 
 		.attackGo,
 		.defendGo {
 			// float: left;
 			position: absolute;
-			bottom: 0;
+			// bottom: 0;
+			top: 0;
+			z-index: 9000;
 			height: 100%;
 			width: 50%;
 			padding: 3%;
-			transition: all 0.3s 0.2s;
+			transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s;
 		}
 
 		.attackGo {
@@ -236,11 +246,11 @@ header {
 		}
 
 		.offscreenAttack {
-			left: -50%;
+			left: -100%;
 		}
 
 		.offscreenDefend {
-			right: -50%;
+			right: -100%;
 		}
 
 		.actionLogo {
@@ -271,7 +281,7 @@ header {
 
 .firstStrike,
 .firstCounter {
-	background-color: #777;
+	// background-color: #777;
 }
 
 
@@ -281,9 +291,14 @@ ON BUTTON PRESS
 =============================
 */
 
-.attackSelected,
-.defendSelected {
-	width: 100%;
-	height: 250%;
-	transition: width 0.35s 0, height 0.5s 0.35s;
-}
+// .buttonsMove {
+// 	top: -60%;
+	// transition: all 0.5s 0.35s;
+// }
+
+// .attackSelected,
+// .defendSelected {
+// 	width: 100%;
+// 	height: 250%;
+	// transition: width 0.35s 0, height 0.5s 0.35s;
+// }

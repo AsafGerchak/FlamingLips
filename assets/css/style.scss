@@ -36,6 +36,7 @@ $defendColor: #ecea46;
 body,
 html {
 	height: 100%;
+	width: 100%;
 	overflow: hidden;
 }
 
@@ -115,6 +116,8 @@ p {
 	}
 }
 
+/* (END Special small-screen conditions) */
+
 
 /*
 =============================
@@ -146,7 +149,6 @@ FIRST SCREEN
 
 		#questionMark {
 			height: 85%;
-			// margin: 0.8%;
 			fill: $fontDarker;
 		}
 	} // end .aboutButton
@@ -171,12 +173,10 @@ FIRST SCREEN
 	height: 7%;
 	padding: 1.5% 5%;
 	cursor: pointer;
-	transition: all 0.75s 0.3s;
+	transition: all 0.65s 0.45s;
 
 	#closeIcon {
-		// height: 90%;
 		height: 30px;
-		// max-height: 40px;
 		fill: $fontDarker;
 		margin: 2% 0;
 	}
@@ -189,8 +189,6 @@ header {
 	z-index: 4000;
 	width: 100%;
 	height: 94%;
-	// color: $font;
-	// text-shadow: 0 0 0.3px #555;
 	text-align: center;
 	margin: 0;
 	background-color: $titleColor;
@@ -199,7 +197,6 @@ header {
 
 	.title {
 		height: 60%;
-		// background-color: $titleColor;
 		padding: 7% 5% 10% 5%;
 		transition: all 0.35s 0.25s;
 
@@ -211,7 +208,6 @@ header {
 			background-color: $font;
 			border: 1px solid $fontDarker;
 			width: 70%;
-			// height: 10%;
 			text-align: center;
 			font-size: 1.4em;
 			color: $titleColor;
@@ -231,9 +227,7 @@ header {
 
 		.attackGo,
 		.defendGo {
-			// float: left;
 			position: absolute;
-			// bottom: 0;
 			top: 0;
 			z-index: 9000;
 			height: 100%;
@@ -255,9 +249,9 @@ header {
 
 		.offscreenAttack,
 		.offscreenDefend {
-			position: absolute;
-			top: 0;
-			transition: all 0.35s;
+			// position: absolute;
+			// top: 0;
+			transition: all 0.5s;
 		}
 
 		.offscreenAttack {
@@ -307,10 +301,95 @@ header {
 
 .offscreenHeader {
 	top: 80%;
-	transition: 0.35s 0.25s;
+	transition: 0.5s 0.4s;
 }
 
 .firstStrike,
 .firstCounter {
 	// background-color: #777;
 }
+
+
+
+/*== Breakpoint info for lanscape and larger screens ==*/
+
+@media all and (min-width: 750px) {
+	.about {
+		width: 100%;
+		padding: 5% 15% 5% 0;
+
+		.aboutButton {
+			width: 6%;
+			height: 100%;
+			float: left;
+			padding: 0 0 0 1%;
+			margin-bottom: 0;
+			margin-right: 5%;
+
+			#questionMark {
+				width: 85%;
+			}
+		} // End .aboutButton
+	} // End .about
+
+	.aboutClose {
+		top: 0;
+		left: -30%;
+		width: 20%;
+		height: 100%;
+		padding: 35% 5%;
+	} // End .aboutClose
+
+	header {
+		top: 0;
+		left: 6%;
+		width: 94%;
+		height: 100%;
+
+		.title {
+			height: 100%;
+			width: 68%;
+			padding-top: 15%;
+
+			h3 {
+				margin: 13% 0 8% 0;
+			}
+
+			.band {
+				width: 80%;
+			}
+		}
+
+		.buttons {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 32%;
+
+			.attackGo,
+			.defendGo {
+				height: 50%;
+				width: 100%;
+				right: 0;
+			}
+
+			.attackGo {
+				top: 50%;
+			}
+
+			.defendGo {
+				top: 0;
+			}
+
+			.offscreenAttack {
+				top: 200%;
+			}
+
+			.offscreenDefend {
+				top: -100%;
+			}
+		} // End .buttons
+	} // End header
+
+} // END MEDIA QUERY

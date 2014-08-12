@@ -54,7 +54,7 @@ attackApp.insult = function(bandName, title, seconds){
 
 attackApp.reset = function(){
 	$('#reset').css('bottom', '-50%');
-	$('.firstStrike h5').fadeOut().empty();
+	$('.firstStrike h5').empty();
 	$('#attackGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
 	$('#defendGo').removeClass('offscreenDefend');
 	$('#buttons').css('top', '0').css('height', '40%');
@@ -142,7 +142,7 @@ defendApp.insult = function(artist, album, song){
 
 defendApp.reset = function(){
 	$('#reset').css('bottom', '-50%');
-	$('.firstCounter h5').fadeOut().empty();
+	$('.firstCounter h5').empty();
 	$('#defendGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
 	$('#attackGo').removeClass('offscreenAttack');
 	$('#buttons').css('top', '0').css('height', '40%');

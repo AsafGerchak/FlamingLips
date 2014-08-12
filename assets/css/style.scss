@@ -89,6 +89,7 @@ h5 {
 p {
 	font-size: 18px;
 	font-weight: 400;
+	line-height: 1.4em;
 	// letter-spacing: 0.03em;
 }
 
@@ -156,7 +157,15 @@ FIRST SCREEN
 	.aboutContent {
 		height: 80%;
 
-		
+	/*
+	NEED TO TAKE OUT BELOW STYLES ONCE SITE IS MORE FUNCTIONAL!!
+	*/
+		.devNote {
+			margin-bottom: 3%;
+			font-style: italic;
+			font-size: 14px;
+			text-align: center;
+		}		
 	} // end .aboutContent
 
 } // end .about
@@ -232,7 +241,7 @@ header {
 			z-index: 9000;
 			height: 100%;
 			width: 50%;
-			padding: 3%;
+			padding: 6% 3%;
 			cursor: pointer;
 			transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s;
 		}
@@ -372,6 +381,7 @@ header {
 				height: 50%;
 				width: 100%;
 				right: 0;
+				padding: 20% 5% 5% 5%;
 			}
 
 			.attackGo {

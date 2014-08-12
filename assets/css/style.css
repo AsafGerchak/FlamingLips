@@ -209,7 +209,8 @@ h5 {
 
 p {
   font-size: 18px;
-  font-weight: 400; }
+  font-weight: 400;
+  line-height: 1.4em; }
 
 /*== Special small-screen conditions ==*/
 @media all and (max-width: 400px) {
@@ -257,7 +258,15 @@ FIRST SCREEN
       height: 85%;
       fill: #6d3a30; }
   .about .aboutContent {
-    height: 80%; }
+    height: 80%;
+    /*
+    NEED TO TAKE OUT BELOW STYLES ONCE SITE IS MORE FUNCTIONAL!!
+    */ }
+    .about .aboutContent .devNote {
+      margin-bottom: 3%;
+      font-style: italic;
+      font-size: 14px;
+      text-align: center; }
 
 /* == SPLASH == */
 .aboutClose {
@@ -319,7 +328,7 @@ header {
       z-index: 9000;
       height: 100%;
       width: 50%;
-      padding: 3%;
+      padding: 6% 3%;
       cursor: pointer;
       -webkit-transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s;
               transition: left 0.3s 0.2s, right 0.3s 0.2s, width 0.35s, height 0.5s 0.35s; }
@@ -412,7 +421,8 @@ header {
       header .buttons .defendGo {
         height: 50%;
         width: 100%;
-        right: 0; }
+        right: 0;
+        padding: 20% 5% 5% 5%; }
       header .buttons .attackGo {
         top: 50%; }
       header .buttons .defendGo {

@@ -20,11 +20,6 @@ GENERAL STYLES
    clear: both;
 }
 
-// COLOR VARIABLES
-// $titleColor: #e74c3c;
-// $attackColor: #D7861B;
-// $defendColor: #68D0AF;
-
 $font: #934c3e;
 $fontDarker: #6d3a30;
 $aboutColor: #e74c3c;
@@ -45,11 +40,7 @@ html {
 }
 
 body {
-	// margin: 0;
-	// padding: 0;
 	color: $font;
-	// font-family
-	//font-weight
 }
 
 
@@ -60,8 +51,6 @@ TYPOGRAPHY
 */
 
 h1 {
-	// font-family: 'Julius Sans One', sans-serif;
-	// font-family: 'Alegreya Sans SC', sans-serif;
 	font-family: 'Dosis', sans-serif;
 	font-weight: 300;
 	font-size: 53px;
@@ -100,6 +89,30 @@ p {
 	font-size: 18px;
 	font-weight: 400;
 	// letter-spacing: 0.03em;
+}
+
+/*== Special small-screen conditions ==*/
+
+@media all and (max-width: 400px) {
+	h1 {
+		font-size: 40px;
+	}
+
+	h2, h3 {
+		font-size: 23px;
+	}
+
+	h4 {
+		font-size: 18px;
+	}
+
+	h5 {
+		font-size: 33px;
+	}
+
+	p {
+		font-size: 16px;
+	}
 }
 
 
@@ -161,8 +174,9 @@ FIRST SCREEN
 	transition: all 0.75s 0.3s;
 
 	#closeIcon {
-		height: 90%;
-		max-height: 40px;
+		// height: 90%;
+		height: 30px;
+		// max-height: 40px;
 		fill: $fontDarker;
 		margin: 2% 0;
 	}

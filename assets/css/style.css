@@ -210,6 +210,22 @@ p {
   font-size: 18px;
   font-weight: 400; }
 
+/*== Special small-screen conditions ==*/
+@media all and (max-width: 400px) {
+  h1 {
+    font-size: 40px; }
+
+  h2, h3 {
+    font-size: 23px; }
+
+  h4 {
+    font-size: 18px; }
+
+  h5 {
+    font-size: 33px; }
+
+  p {
+    font-size: 16px; } }
 /*
 =============================
 FIRST SCREEN
@@ -254,8 +270,7 @@ FIRST SCREEN
   -webkit-transition: all 0.75s 0.3s;
           transition: all 0.75s 0.3s; }
   .aboutClose #closeIcon {
-    height: 90%;
-    max-height: 40px;
+    height: 30px;
     fill: #6d3a30;
     margin: 2% 0; }
 

@@ -22,6 +22,7 @@ GENERAL STYLES
 
 $font: #934c3e;
 $fontDarker: #6d3a30;
+$fontDarkest: #3b221d;
 $aboutColor: #e74c3c;
 // Duller red alternate:
 // $aboutColor: #e55a4b;
@@ -93,11 +94,12 @@ p {
 	// letter-spacing: 0.03em;
 }
 
-/*== Special small-screen conditions ==*/
 
-@media all and (max-width: 400px) {
+/*== Most smart phones ==*/
+
+@media all and (min-width: 401px) and (max-width: 749px) {
 	h1 {
-		font-size: 40px;
+		font-size: 44px;
 	}
 
 	h2, h3 {
@@ -105,15 +107,40 @@ p {
 	}
 
 	h4 {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	h5 {
-		font-size: 33px;
+		font-size: 29px;
 	}
 
 	p {
+		font-size: 14px;
+	}
+}
+
+
+/*== Special small-screen conditions ==*/
+
+@media all and (max-width: 400px) {
+	h1 {
+		font-size: 36px;
+	}
+
+	h2, h3 {
+		font-size: 18px;
+	}
+
+	h4 {
 		font-size: 16px;
+	}
+
+	h5 {
+		font-size: 29px;
+	}
+
+	p {
+		font-size: 14px;
 	}
 }
 
@@ -133,7 +160,7 @@ FIRST SCREEN
 	height: 100%;
 	padding: 0 5%;
 	background-color: $aboutColor;
-	color: $fontDarker;
+	color: $fontDarkest;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -273,16 +300,29 @@ header {
 
 		.actionLogo {
 			position: absolute;
-			bottom: 8%;
+			bottom: 10%;
 			left: 10%;
 			height: 40%;
 			width: 80%;
 
 			.punch,
 			.shield {
-				height: 70%;
+				height: 65px;
 				fill: $aboutColor;
 			}
+
+		// .actionLogo {
+		// 	position: relative;
+		// 	top: 42px;
+		// 	left: 10%;
+		// 	height: 38%;
+		// 	width: 80%;
+
+		// 	.punch,
+		// 	.shield {
+		// 		height: 70px;
+		// 		fill: $aboutColor;
+		// 	}
 
 			.action {
 				color: $aboutColor;

@@ -12,9 +12,11 @@ var attackApp = {};
 attackApp.init = function(){
 	var band = $('#band').val();
 	attackApp.getTrack(band);
-	$('#attackGo').css('width', '100%').css('height', '250%').css('cursor', 'auto');
+	// $('#attackGo').css('width', '100%').css('height', '250%').css('cursor', 'auto');
+	$('#attackGo').addClass('answer');
 	$('#defendGo').addClass('offscreenDefend');
-	$('#buttons').css('top', '-60%').css('height', '100%');
+	// $('#buttons').css('top', '-60%').css('height', '100%');
+	$('#buttons').addClass('buttonAnswer');
 	$('#attackText').fadeOut();
 };
 
@@ -55,9 +57,11 @@ attackApp.insult = function(bandName, title, seconds){
 attackApp.reset = function(){
 	$('#reset').css('bottom', '-50%');
 	$('.firstStrike h5').empty();
-	$('#attackGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
+	// $('#attackGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
+	$('#attackGo').removeClass('answer');
 	$('#defendGo').removeClass('offscreenDefend');
-	$('#buttons').css('top', '0').css('height', '40%');
+	// $('#buttons').css('top', '0').css('height', '40%');
+	$('#buttons').removeClass('buttonAnswer');
 	$('#attackText').fadeIn();
 };
 
@@ -74,9 +78,11 @@ var defendApp = {};
 defendApp.init = function(){
 	var band = $('#band').val();
 	defendApp.getAlbum(band);
-	$('#defendGo').css('width', '100%').css('height', '250%').css('cursor', 'auto');
+	// $('#defendGo').css('width', '100%').css('height', '250%').css('cursor', 'auto');
+	$('#defendGo').addClass('answer');
 	$('#attackGo').addClass('offscreenAttack');
-	$('#buttons').css('top', '-60%').css('height', '100%');
+	// $('#buttons').css('top', '-60%').css('height', '100%');
+	$('#buttons').addClass('buttonAnswer');
 	$('#defendText').fadeOut();
 };
 
@@ -143,9 +149,11 @@ defendApp.insult = function(artist, album, song){
 defendApp.reset = function(){
 	$('#reset').css('bottom', '-50%');
 	$('.firstCounter h5').empty();
-	$('#defendGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
+	// $('#defendGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
+	$('#defendGo').removeClass('answer')
 	$('#attackGo').removeClass('offscreenAttack');
-	$('#buttons').css('top', '0').css('height', '40%');
+	// $('#buttons').css('top', '0').css('height', '40%');
+	$('#buttons').removeClass('buttonAnswer')
 	$('#defendText').fadeIn();
 };
 
@@ -162,9 +170,11 @@ aboutScreen.init = function(){
 	$('#attackGo').addClass('offscreenAttack');
 	$('#defendGo').addClass('offscreenDefend');
 	$('#header').addClass('offscreenHeader');
-	$('.about').css('top', '-6%');
+	// $('.about').css('top', '-6%');
+	$('#about').addClass('aboutShow');
 	$('.title').fadeOut(400, 'linear');
-	$('.aboutClose').css('top', '1.5%');
+	// $('.aboutClose').css('top', '1.5%');
+	$('#aboutClose').addClass('aboutCloseShow');
 };
 
 var aboutClose = {};
@@ -173,10 +183,12 @@ aboutClose.init = function(){
 	$('#attackGo').removeClass('offscreenAttack');
 	$('#defendGo').removeClass('offscreenDefend');
 	$('#header').removeClass('offscreenHeader');
-	$('.about').css('top', '0');
+	// $('.about').css('top', '0');
+	$('#about').removeClass('aboutShow');
 	$('.title').fadeIn(400, 'linear');
 	$('.aboutClose').fadeOut(50, function(){
-		$(this).css('top', '-40%').delay(800).fadeIn(400);
+		// $(this).css('top', '-40%').delay(800).fadeIn(400);
+		$(this).removeClass('aboutCloseShow').delay(800).fadeIn(400);
 	});
 };
 

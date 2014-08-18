@@ -284,6 +284,9 @@ FIRST SCREEN
       font-size: 14px;
       text-align: center; }
 
+.aboutShow {
+  top: -6%; }
+
 /* == SPLASH == */
 .aboutClose {
   position: absolute;
@@ -301,6 +304,9 @@ FIRST SCREEN
     fill: #6d3a30;
     margin: 2% 0; }
 
+.aboutCloseShow {
+  top: 1.5%; }
+
 header {
   position: absolute;
   top: 6%;
@@ -313,7 +319,8 @@ header {
   background-color: #a8d064;
   overflow: hidden;
   -webkit-transition: all 0.3s;
-          transition: all 0.3s; }
+          transition: all 0.3s;
+  /* == Change button size when delivering answer == */ }
   header .title {
     height: 60%;
     padding: 7% 5% 10% 5%;
@@ -336,7 +343,10 @@ header {
     top: 0;
     overflow: hidden;
     -webkit-transition: all 0.5s 0.35s;
-            transition: all 0.5s 0.35s; }
+            transition: all 0.5s 0.35s;
+    /* == Buttons offscreen on about or to make room for the answer == */
+    /* == Going big screen with the api answer == */
+    /* == Logo on buttons == */ }
     header .buttons .attackGo,
     header .buttons .defendGo {
       position: absolute;
@@ -362,6 +372,10 @@ header {
       left: -100%; }
     header .buttons .offscreenDefend {
       right: -100%; }
+    header .buttons .answer {
+      width: 100%;
+      height: 250%;
+      cursor: auto; }
     header .buttons .actionLogo {
       position: absolute;
       bottom: 10%;
@@ -375,6 +389,9 @@ header {
       header .buttons .actionLogo .action {
         color: #e74c3c;
         text-transform: uppercase; }
+  header .buttonAnswer {
+    top: -60%;
+    height: 100%; }
   header .reset {
     position: absolute;
     bottom: -50%;
@@ -407,12 +424,20 @@ header {
       .about .aboutButton #questionMark {
         width: 85%; }
 
+  .aboutShow {
+    top: 0;
+    left: -6%; }
+
   .aboutClose {
     top: 0;
     left: -30%;
     width: 20%;
     height: 100%;
     padding: 35% 5%; }
+
+  .aboutCloseShow {
+    top: 0;
+    left: 0; }
 
   header {
     top: 0;
@@ -443,7 +468,17 @@ header {
         top: 50%; }
       header .buttons .defendGo {
         top: 0; }
+      header .buttons .offscreenAttack,
+      header .buttons .offscreenDefend {
+        -webkit-transition: all 0.85s;
+                transition: all 0.85s; }
       header .buttons .offscreenAttack {
+        left: 0;
         top: 200%; }
       header .buttons .offscreenDefend {
-        top: -100%; } }
+        right: 0;
+        top: -100%; }
+
+  .offscreenHeader {
+    top: 0;
+    left: 80%; } }

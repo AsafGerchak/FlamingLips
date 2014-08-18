@@ -197,6 +197,10 @@ FIRST SCREEN
 
 } // end .about
 
+.aboutShow {
+	top: -6%;
+}
+
 
 /* == SPLASH == */
 
@@ -216,6 +220,10 @@ FIRST SCREEN
 		fill: $fontDarker;
 		margin: 2% 0;
 	}
+}
+
+.aboutCloseShow {
+	top: 1.5%;
 }
 
 header {
@@ -283,6 +291,7 @@ header {
 			right: 0;
 		}
 
+	/* == Buttons offscreen on about or to make room for the answer == */
 		.offscreenAttack,
 		.offscreenDefend {
 			// position: absolute;
@@ -298,6 +307,14 @@ header {
 			right: -100%;
 		}
 
+	/* == Going big screen with the api answer == */
+		.answer {
+			width: 100%;
+			height: 250%;
+			cursor: auto;
+		}
+
+	/* == Logo on buttons == */
 		.actionLogo {
 			position: absolute;
 			bottom: 10%;
@@ -333,6 +350,12 @@ header {
 		
 
 	}	// end buttons
+
+	/* == Change button size when delivering answer == */
+	.buttonAnswer {
+		top: -60%;
+		height: 100%;
+	}
 
 	.reset {
 			position: absolute;
@@ -381,6 +404,11 @@ header {
 		} // End .aboutButton
 	} // End .about
 
+	.aboutShow {
+		top: 0;
+		left: -6%;
+	}
+
 	.aboutClose {
 		top: 0;
 		left: -30%;
@@ -388,6 +416,11 @@ header {
 		height: 100%;
 		padding: 35% 5%;
 	} // End .aboutClose
+
+	.aboutCloseShow {
+		top: 0;
+		left: 0;
+	}
 
 	header {
 		top: 0;
@@ -432,14 +465,26 @@ header {
 				top: 0;
 			}
 
+			.offscreenAttack,
+			.offscreenDefend {
+				transition: all 0.85s;
+			}
+
 			.offscreenAttack {
+				left: 0;
 				top: 200%;
 			}
 
 			.offscreenDefend {
+				right: 0;
 				top: -100%;
 			}
 		} // End .buttons
 	} // End header
+
+	.offscreenHeader {
+		top: 0;
+		left: 80%;
+	}
 
 } // END MEDIA QUERY

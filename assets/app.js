@@ -48,14 +48,16 @@ attackApp.insult = function(bandName, title, seconds){
 	attackApp.minuteTime = Math.floor(seconds/60) + " minutes and " + (seconds%60) + " seconds";
 	attackApp.phrase = bandName + "? Please. Have you even listened to '" + title + "'? That song is only " + attackApp.minuteTime + " long, but it feels like a fucking eternity. A BAD eternity.";
 	$('.firstStrike h5').append(attackApp.phrase);
-	$('#reset').css('bottom', '0');
+	// $('#reset').css('bottom', '0');
+	$('#reset').addClass('resetOnscreen');
 	$('#reset').on('click', function(){
 		attackApp.reset();
 	});
 };
 
 attackApp.reset = function(){
-	$('#reset').css('bottom', '-50%');
+	// $('#reset').css('bottom', '-50%')
+	$('#reset').removeClass('resetOnscreen');
 	$('.firstStrike h5').empty();
 	// $('#attackGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
 	$('#attackGo').removeClass('answer');
@@ -140,14 +142,16 @@ defendApp.insult = function(artist, album, song){
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? The title track changed the way people open their albums!";
 		$('.firstCounter h5').append(defendApp.phrase);
 	};
-	$('#reset').css('bottom', '0');
+	// $('#reset').css('bottom', '0');
+	$('#reset').addClass('resetOnscreen');
 	$('#reset').on('click', function(){
 		defendApp.reset();
 	});
 };
 
 defendApp.reset = function(){
-	$('#reset').css('bottom', '-50%');
+	// $('#reset').css('bottom', '-50%');
+	$('#reset').removeClass('resetOnscreen');
 	$('.firstCounter h5').empty();
 	// $('#defendGo').css('width', '50%').css('height', '100%').css('cursor', 'pointer');
 	$('#defendGo').removeClass('answer')

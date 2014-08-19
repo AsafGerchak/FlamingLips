@@ -352,9 +352,6 @@ header {
 				text-transform: uppercase;
 			}
 		} // end actionLogo
-
-		
-
 	}	// end buttons
 
 	/* == Change button size when delivering answer == */
@@ -397,7 +394,7 @@ header {
 
 
 
-/*== Breakpoint info for lanscape and larger screens ==*/
+/*== Breakpoint info for landscape and larger screens ==*/
 
 @media all and (min-width: 750px) {
 	.about {
@@ -498,7 +495,21 @@ header {
 				right: 0;
 				top: -100%;
 			}
+
+			.answer {
+				width: 100%;
+				height: 250%;
+				padding: 10%;
+				cursor: auto;
+				z-index: 8000;
+				top: 0;
+				transition: top 0.5s, height 0.5s, width 0.65s 0.55s;
+			}
 		} // End .buttons
+
+		.buttonAnswer {
+			width: 100%;
+		}
 	} // End header
 
 	.offscreenHeader {

@@ -418,7 +418,7 @@ header {
   -webkit-transition: 0.5s 0.4s;
           transition: 0.5s 0.4s; }
 
-/*== Breakpoint info for lanscape and larger screens ==*/
+/*== Breakpoint info for landscape and larger screens ==*/
 @media all and (min-width: 750px) {
   .about {
     width: 100%;
@@ -491,6 +491,17 @@ header {
       header .buttons .offscreenDefend {
         right: 0;
         top: -100%; }
+      header .buttons .answer {
+        width: 100%;
+        height: 250%;
+        padding: 10%;
+        cursor: auto;
+        z-index: 8000;
+        top: 0;
+        -webkit-transition: top 0.5s, height 0.5s, width 0.65s 0.55s;
+                transition: top 0.5s, height 0.5s, width 0.65s 0.55s; }
+    header .buttonAnswer {
+      width: 100%; }
 
   .offscreenHeader {
     top: 0;

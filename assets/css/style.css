@@ -510,3 +510,6 @@ header {
     left: 70%;
     -webkit-transition: 0.65s 0.22s;
             transition: 0.65s 0.22s; } }
+@media all and (max-width: 749px) and (max-height: 400px) {
+  header .buttons {
+    top: 100%; } }

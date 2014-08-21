@@ -34,6 +34,7 @@ attackApp.getTrack = function(bandQuery){
 		dataType: 'jsonp',
 		success: function(result){
 			// If an error is returned, pass the band name into the error function. On a successful call, grab all variables needed to construct the insult, and pass them into the insult function:
+			// console.log(result);
 			if (result.error) {
 				attackApp.error(bandQuery)
 			} else {

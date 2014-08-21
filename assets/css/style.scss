@@ -41,6 +41,12 @@ html {
 	overflow: hidden;
 }
 
+// @media all and (max-height:600px) {
+// 	body {
+// 		overflow-y: scroll;
+// 	}
+// }
+
 body {
 	color: $font;
 }
@@ -533,3 +539,10 @@ header {
 	}
 
 } // END MEDIA QUERY
+
+
+@media all and (max-width: 749px) and (max-height: 400px) {
+	header .buttons {
+		top: 100%;
+	}
+}

@@ -11,7 +11,9 @@ var attackApp = {};
 // init function, to be triggered on attack-button click
 attackApp.init = function(){
 	var band = $('#band').val();
+	
 	attackApp.randomAttack(band);
+
 	$('#attackGo').addClass('answer');
 	$('#defendGo').addClass('offscreenDefend');
 	$('#buttons').addClass('buttonAnswer');
@@ -26,11 +28,13 @@ ATTACK RANSOMISER ==================
 // For now, I'm using with this very basic if/else randomizer, because I only have 2 attacks programmed. I'll make a proper randomizer, which will pick from an array of attacks, soon.
 
 attackApp.randomAttack = function(artist){
-	attackApp.attackNumber = Math.ceil(Math.random() * 2);
+	attackApp.attackNumber = Math.ceil(Math.random() * 3);
 	if (attackApp.attackNumber === 1){
 		attackApp.getTrack(artist);
-	} else {
+	} else if (attackApp.attackNumber === 2) {
 		attackApp.twoTracks(artist);
+	} else {
+		attackApp.suicideTracks(artist);
 	};
 };
 
@@ -173,6 +177,73 @@ attackApp.insultTwo = function(bandOne, bandOneHit, bandTwo, bandTwoHit){
 };
 
 // =================END ATTACK 2
+
+
+/*
+ATTACK OPTION 3 ==================
+*/
+
+attackApp.suicideTracks = function(bandQuery){
+	$.ajax({
+		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getTopAlbums',
+		type: 'GET',
+		data: {
+			api_key: key,
+			format: 'json',
+			artist: bandQuery,
+			limit: 2
+		},
+		dataType: 'jsonp',
+		success: function(result){
+			// If an error is returned, pass the band name into the error function. On a successful call, grab the top album and pass it into the album.getInfo function:
+			if (result.error) {
+				attackApp.error(bandQuery)
+			} else {
+				attackApp.topAlbum = result.topalbums.album[0].name;
+				attackApp.tracksLong(bandQuery, attackApp.topAlbum);
+			};
+		}
+	});
+};
+
+attackApp.tracksLong = function(bandName, albumName){
+	$.ajax({
+		url: 'http://ws.audioscrobbler.com/2.0/?method=album.getInfo',
+		type: 'GET',
+		data: {
+			api_key: key,
+			format: 'json',
+			artist: bandName,
+			album: albumName
+		},
+		dataType: 'jsonp',
+		success: function(result){
+			// On a successful call, grab the number of tracks and pass it into the insult function:
+			attackApp.tracks = result.album.tracks.track.length;
+			attackApp.insultThree(bandName, albumName, attackApp.tracks);	
+		}
+	});
+};
+
+attackApp.insultThree = function(group, album, noOfSongs){
+	// Build the insult and inject it into the DOM:
+	$('.firstStrike h5').empty();
+	$('#reset h3').empty();
+	$('#reset h2').empty();
+	attackApp.phraseThree = "Oh yeah, I really get a lot out of listening to " + group + "! Whenever " + album + " is on, I manage to get through all " + noOfSongs + " tracks without commiting suicide, and that makes me feel like a really strong person.";
+	$('.firstStrike h5').append(attackApp.phraseThree);
+	attackApp.resetOriginalH3 = "Nice. That'll teach them to have an opinion in public."
+	attackApp.resetOriginalH2 = "Let's go do that again"
+	$('#reset h3').append(attackApp.resetOriginalH3);
+	$('#reset h2').append(attackApp.resetOriginalH2);
+	$('#reset').addClass('resetOnscreen');
+	$('#reset').on('click', function(){
+		attackApp.reset();
+	});
+};
+
+// =================END ATTACK 3
+
 
 
 // Error to return if no band info found:

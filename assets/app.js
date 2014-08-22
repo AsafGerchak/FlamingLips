@@ -218,11 +218,7 @@ var defendApp = {};
 // init function, to be triggered on attack-button click
 defendApp.init = function(){
 	var band = $('#band').val();
-
-	// defendApp.getAlbum(band);
-
-	defendApp.yearFormed(band);
-
+	defendApp.randomDefend(band);
 	$('#defendGo').addClass('answer');
 	$('#attackGo').addClass('offscreenAttack');
 	$('#buttons').addClass('buttonAnswer');
@@ -231,60 +227,19 @@ defendApp.init = function(){
 
 
 /*
-DEFENSE OPTION 2 ==================
+DEFEND RANSOMISER ==================
 */
 
-defendApp.yearFormed = function(bandQuery){
-	$.ajax({
-		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getInfo',
-		type: 'GET',
-		data: {
-			api_key: key,
-			format: 'json',
-			artist: bandQuery,
-		},
-		dataType: 'jsonp',
-		success: function(result){
-			// If an error is returned, pass the band name into the error function. On a successful call, grab the year the band was founded and pass it into the insult function:
-			if (result.error) {
-				defendApp.error(bandQuery)
-			} else {
-				defendApp.founded = result.artist.bio.yearformed;
-				defendApp.insultTwo(bandQuery, defendApp.founded);
-			};
-		}
-	});
-};
+// For now, I'm using with this very basic if/else randomizer, because I only have 2 attacks programmed. I'll make a proper randomizer, which will pick from an array of attacks, soon.
 
-defendApp.insultTwo = function(bandName, year){
-	// Build the insult and variants (dependent on founding year), and inject it into the DOM
-	$('.firstCounter h5').empty();
-	$('#reset h3').empty();
-	$('#reset h2').empty();
-	if (year >= 2005){
-		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my son was born.";
-		$('.firstCounter h5').append(defendApp.phraseTwo);
-	} else if (year >= 1993){
-		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my sister's only child was born.";
-		$('.firstCounter h5').append(defendApp.phraseTwo);
-	}  else if (year >= 1977){
-		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my partner was born.";
-		$('.firstCounter h5').append(defendApp.phraseTwo);
+defendApp.randomDefend = function(artist){
+	defendApp.defendNumber = Math.ceil(Math.random() * 2);
+	if (defendApp.defendNumber === 1){
+		defendApp.getAlbum(artist);
 	} else {
-		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my father was born.";
-		$('.firstCounter h5').append(defendApp.phraseTwo);
+		defendApp.yearFormed(artist);
 	};
-	defendApp.resetOriginalH3 = "Nice. That'll teach them to have an opinion in public."
-	defendApp.resetOriginalH2 = "Let's go do that again"
-	$('#reset h3').append(defendApp.resetOriginalH3);
-	$('#reset h2').append(defendApp.resetOriginalH2);	
-	$('#reset').addClass('resetOnscreen');
-	$('#reset').on('click', function(){
-		defendApp.reset();
-	});
 };
-
-// =================END DEFENSE 2
 
 
 /*
@@ -336,6 +291,7 @@ defendApp.getOpeningTrack = function(bandName, albumQuery){
 	});
 };
 
+
 // Time to make someone uncomfortable:
 defendApp.insultOne = function(artist, album, song){
 	// Build the insult and variants (dependent on name overlaps), and inject it into the DOM
@@ -351,6 +307,64 @@ defendApp.insultOne = function(artist, album, song){
 	} else {
 		defendApp.phrase = "You don't like " + artist + "? Have you even listened to '" + album + "', or were you too busy having bad taste? The title track changed the way people open their albums!";
 		$('.firstCounter h5').append(defendApp.phrase);
+	};
+	defendApp.resetOriginalH3 = "Nice. That'll teach them to have an opinion in public."
+	defendApp.resetOriginalH2 = "Let's go do that again"
+	$('#reset h3').append(defendApp.resetOriginalH3);
+	$('#reset h2').append(defendApp.resetOriginalH2);	
+	$('#reset').addClass('resetOnscreen');
+	$('#reset').on('click', function(){
+		defendApp.reset();
+	});
+};
+
+// =================END DEFENSE 1
+
+
+/*
+DEFENSE OPTION 2 ==================
+*/
+
+defendApp.yearFormed = function(bandQuery){
+	$.ajax({
+		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.getInfo',
+		type: 'GET',
+		data: {
+			api_key: key,
+			format: 'json',
+			artist: bandQuery,
+		},
+		dataType: 'jsonp',
+		success: function(result){
+			// If an error is returned, pass the band name into the error function. On a successful call, grab the year the band was founded and pass it into the insult function:
+			if (result.error) {
+				defendApp.error(bandQuery)
+			} else {
+				defendApp.founded = result.artist.bio.yearformed;
+				defendApp.insultTwo(bandQuery, defendApp.founded);
+			};
+		}
+	});
+};
+
+// Let's tell someone off:
+defendApp.insultTwo = function(bandName, year){
+	// Build the insult and variants (dependent on founding year), and inject it into the DOM
+	$('.firstCounter h5').empty();
+	$('#reset h3').empty();
+	$('#reset h2').empty();
+	if (year >= 2005){
+		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my son was born.";
+		$('.firstCounter h5').append(defendApp.phraseTwo);
+	} else if (year >= 1993){
+		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my sister's only child was born.";
+		$('.firstCounter h5').append(defendApp.phraseTwo);
+	}  else if (year >= 1977){
+		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my partner was born.";
+		$('.firstCounter h5').append(defendApp.phraseTwo);
+	} else {
+		defendApp.phraseTwo = "You're out of your mind. I'm 100% sure that " + bandName + "'s music career was the single best thing to be created in " + year + ", and that's literally the year my father was born.";
+		$('.firstCounter h5').append(defendApp.phraseTwo);
 	};
 	defendApp.resetOriginalH3 = "Nice. That'll teach them to have an opinion in public."
 	defendApp.resetOriginalH2 = "Let's go do that again"

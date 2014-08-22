@@ -230,7 +230,7 @@ attackApp.insultThree = function(group, album, noOfSongs){
 	$('.firstStrike h5').empty();
 	$('#reset h3').empty();
 	$('#reset h2').empty();
-	attackApp.phraseThree = "Oh yeah, I really get a lot out of listening to " + group + "! Whenever " + album + " is on, I manage to get through all " + noOfSongs + " tracks without commiting suicide, and that makes me feel like a really strong person.";
+	attackApp.phraseThree = "Oh yeah, I get a lot out of listening to " + group + "! Whenever " + album + " is on, I manage to get through all " + noOfSongs + " tracks without commiting suicide, and that makes me feel like a really strong person.";
 	$('.firstStrike h5').append(attackApp.phraseThree);
 	attackApp.resetOriginalH3 = "Nice. That'll teach them to have an opinion in public."
 	attackApp.resetOriginalH2 = "Let's go do that again"

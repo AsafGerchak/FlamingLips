@@ -394,8 +394,10 @@ header {
       header .buttons .actionLogo .action {
         color: #e74c3c;
         text-transform: uppercase; }
-    header .buttons .emphasis {
+    header .buttons .heavyEmphasis {
       font-weight: 700; }
+    header .buttons .lightEmphasis {
+      font-style: italic; }
   header .buttonAnswer {
     top: -60%;
     height: 100%; }

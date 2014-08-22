@@ -359,8 +359,12 @@ header {
 			}
 		} // end actionLogo
 
-		.emphasis {
+		.heavyEmphasis {
 			font-weight: 700;
+		}
+
+		.lightEmphasis {
+			font-style: italic;
 		}
 	}	// end buttons
 

@@ -100,6 +100,15 @@ p {
 	margin-bottom: 2%;
 }
 
+a {
+	text-decoration: none;
+	color: $fontDarker;
+
+	&:hover {
+		color: $fontDarkest;
+	}
+}
+
 
 /*== Most smart phones ==*/
 
@@ -414,6 +423,7 @@ header {
 	.about {
 		width: 100%;
 		padding: 5% 15% 5% 0;
+		// overflow: hidden;
 
 		.aboutButton {
 			width: 6%;
@@ -546,6 +556,15 @@ header {
 
 
 @media all and (max-width: 749px) and (max-height: 400px) {
+	// body,
+	// html {
+	// 	height: 200%;
+	// }
+
+	.about .aboutContent {
+		display: none;
+	}
+
 	header .buttons {
 		top: 100%;
 	}

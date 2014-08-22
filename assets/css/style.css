@@ -213,6 +213,12 @@ p {
   line-height: 1.4em;
   margin-bottom: 2%; }
 
+a {
+  text-decoration: none;
+  color: #6d3a30; }
+  a:hover {
+    color: #3b221d; }
+
 /*== Most smart phones ==*/
 @media all and (min-width: 401px) and (max-width: 749px) {
   h1 {
@@ -513,5 +519,8 @@ header {
     -webkit-transition: 0.65s 0.22s;
             transition: 0.65s 0.22s; } }
 @media all and (max-width: 749px) and (max-height: 400px) {
+  .about .aboutContent {
+    display: none; }
+
   header .buttons {
     top: 100%; } }
